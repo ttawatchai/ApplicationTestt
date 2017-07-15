@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:text="ชื่อ "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/nameList"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.37"
+        android:text="อายุ"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ageList"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.example.zipper.applicationtest;
 
 
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,14 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                InputFragment inputFragment = new InputFragment();
-                transaction.replace(R.id.frame,inputFragment,"data");
-                transaction.addToBackStack(null);
-
-                transaction.commit();
+                Intent intent = new Intent(getApplicationContext(),InputActivity.class);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Page 2",
                         Toast.LENGTH_LONG).show();
+
 
 
             }
@@ -45,11 +43,13 @@ public class MainActivity extends AppCompatActivity {
         ThirdPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                ApiFragment apiFragment = new ApiFragment();
-                transaction.replace(R.id.frame,apiFragment,"data");
-                transaction.addToBackStack(null);
-                transaction.commit();
+//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//                ApiFragment apiFragment = new ApiFragment();
+//                transaction.replace(R.id.frame,apiFragment,"data");
+//                transaction.addToBackStack(null);
+//                transaction.commit();
+                Intent intent = new Intent(getApplicationContext(),ApiActivity.class);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Page 3",
                         Toast.LENGTH_LONG).show();
             }

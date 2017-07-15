@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InputActivity"
+            android:label="@string/title_activity_input"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ApiActivity"
+            android:label="@string/title_activity_api"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
