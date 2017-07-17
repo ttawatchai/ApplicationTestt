@@ -4,7 +4,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,9 +11,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Model.DataBase;
+import Model.DataBaseControl;
 import Model.ListViewAdapter;
 
 public class InputActivity extends AppCompatActivity  {
@@ -26,14 +25,14 @@ public class InputActivity extends AppCompatActivity  {
 
     ListView listView ;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         dbCon = new DataBaseControl(this);
 
         saveButton = (Button) findViewById(R.id.addButton);
@@ -46,7 +45,7 @@ public class InputActivity extends AppCompatActivity  {
         final Cursor data = dbCon.getListContents();
         int numRows = data.getCount();
         if (numRows == 0) {
-            Toast.makeText(InputActivity.this, "The Database is empty  :(.", Toast.LENGTH_LONG).show();
+            Toast.makeText(InputActivity.this, "The Database is empty ", Toast.LENGTH_LONG).show();
         } else {
             int i = 0;
             while (data.moveToNext()) {
@@ -68,7 +67,9 @@ public class InputActivity extends AppCompatActivity  {
                     AddData(Name, Age);
 
                     nameEdit.setText("");
+                    nameEdit.setHint("กรอกชื่อ");
                     ageEdit.setText("");
+                    ageEdit.setHint("กรอกอายุ");
 
                     reloadingDatabase();
 

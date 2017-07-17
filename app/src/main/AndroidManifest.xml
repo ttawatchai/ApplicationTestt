@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zipper.applicationtest">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,11 +21,13 @@
         <activity
             android:name=".InputActivity"
             android:label="@string/title_activity_input"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="com.example.zipper.applicationtest.MainActivity"> </activity>
         <activity
-            android:name=".ApiActivity"
-            android:label="@string/title_activity_api"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".ApiViewActivity"
+            android:label="@string/title_activity_api_view"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="com.example.zipper.applicationtest.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.zipper.applicationtest;
+package Model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -51,7 +51,6 @@ public class DataBaseControl extends SQLiteOpenHelper {
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        //if date as inserted incorrectly it will return -1
         if (result == -1) {
             return false;
         } else {
@@ -59,7 +58,6 @@ public class DataBaseControl extends SQLiteOpenHelper {
         }
     }
 
-    //query for 1 week repeats
     public Cursor getListContents() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
